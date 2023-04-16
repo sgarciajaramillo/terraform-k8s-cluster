@@ -1,10 +1,19 @@
+output "eks_cluster_name" {
+    value = aws_eks_cluster.cluster.name
+}
 
-    output "kubernetes_cluster_name" {
-      description = "The aks cluster name"
-      value = azurerm_kubernetes_cluster.default.name
-    }
+output "eks_endpoint" {
+    value = aws_eks_cluster.cluster.endpoint
+}
 
-    output "host" {
-       description = "the aks host"
-       value = azurerm_kubernetes_cluster.default.kube_config.0.host
-    }
+output "eks_version" {
+    value = aws_eks_cluster.cluster.version
+}
+
+output "eks_kubeconfig-certificate-authority-data" {
+    value = aws_eks_cluster.cluster.certificate_authority[0].data
+}
+
+output "eks_vpc_config" {
+    value = aws_eks_cluster.cluster.vpc_config
+}
