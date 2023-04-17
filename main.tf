@@ -16,10 +16,6 @@ resource "azurerm_kubernetes_cluster" "default" {
         client_secret = var.ARM_CLIENT_SECRET
     }
 
-    role_based_access_control {
-        enabled = true
-    }
-
     tags = {
         studentid = var.prefix
     }
